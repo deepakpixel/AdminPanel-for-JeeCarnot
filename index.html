@@ -150,8 +150,8 @@
               <i class="fas fa-grimace" style="color:#089809;"></i>
             </div>
             </div>
+              <!-- btn btn-secondary position-sticky -->
 
-          <span style="size:4em; position:relative; left:79%;"><button onclick="toggle_visibility('foo');" type="button" class="btn btn-secondary position-sticky" id="see" >Full Feedback</button></span>
 
 
         <br />
@@ -198,10 +198,12 @@
             <div class="shift" style="position:relative; left:76%;">
               <button type="button" class="btn btn-danger btn-sm position-sticky">Critical</button>
               <button type="button" class="btn btn-secondary btn-sm position-sticky">Resolved</button>
-            </div>
 
+            </div>
+<br />
 
         </div>
+        <span style="size:4em;margin:0px 0px 10px 10px; top:-5%;"><button onclick="toggle_visibility('foo');" type="button" class="btn btn-secondary pull-right" id="see" >Full Feedback</button></span>
       </div>
       </div>
 
@@ -211,16 +213,20 @@
           function toggle_visibility(id) {
              var e = document.getElementById(id);
              if(e.style.display == 'block')
-                e.style.display = 'none';
+                {e.style.display = 'none';
+                document.getElementById("see").innerHTML="Full Feedback";
+                }
              else
-                e.style.display = 'block';
-          }
+              {  e.style.display = 'block';
+                document.getElementById("see").innerHTML="Show Less";
+              }
+        }
 
-          $(document).ready(function(){
-  $("button").click(function(){
-    $("#see").remove();
-  });
-});
+//           $(document).ready(function(){
+//   $("button").click(function(){
+//     $("#see").remove();
+//   });
+// });
       //-->
       </script>
 
