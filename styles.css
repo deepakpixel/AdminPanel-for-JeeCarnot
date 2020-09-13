@@ -80,21 +80,75 @@ img{
   left:5px;
 }
 
-.box{
-border-bottom: 50px solid #ff0033;
-border-left: 50px solid transparent;
-border-right: 50px solid transparent;
+.critical{
+border-bottom: 54px solid #ff0033;
+border-left: 54px solid transparent;
+border-right: 54px solid transparent;
 float:left;
-margin-left:-48px;
+margin-left:-50px;
 position:absolute;
-top:-8px;
+top:-9px;
 z-index: 1;
 -webkit-transform: rotate(-45deg);}
 
-.box > span{
+.critical span{
 color:#fff;
-font-size:1em;
+font-size:15px;
 font-weight:bold;
 position:absolute;
-right:-20px;
-top:20px;}
+text-align:left;
+right:-26px;
+top:21px;}
+
+.resolved{
+border-bottom: 54px solid #808080;
+border-left: 54px solid transparent;
+border-right: 54px solid transparent;
+float:left;
+margin-left:-50px;
+position:absolute;
+top:-9px;
+z-index: 1;
+-webkit-transform: rotate(-45deg);}
+
+.resolved span{
+color:#fff;
+font-size:15px;
+font-weight:bold;
+position:absolute;
+text-align:left;
+right:-26px;
+top:21px;}
+
+.pending{
+border-bottom: 54px solid #27A62E;
+border-left: 54px solid transparent;
+border-right: 54px solid transparent;
+float:left;
+margin-left:-50px;
+position:absolute;
+top:-9px;
+z-index: 1;
+-webkit-transform: rotate(-45deg);}
+
+.pending span{
+color:#fff;
+font-size:15px;
+font-weight:bold;
+position:absolute;
+text-align:left;
+right:-26px;
+top:21px;}
+
+
+.paragraph h5{
+  margin:0;
+  font-size: 18px;
+  margin-top: 1.5px;
+}
+.paragraph p{
+  margin:0;
+}
+.comment p{
+  background-color: #DCDCDC;
+}
