@@ -161,102 +161,110 @@
 
 
 
-    let x = '',
-        i;
-    let j = '';
+
+
+    let i;
+let j = '';
     for (i = 0; i < 10; i++) {
-        j = `
+          j = `
 
-        <div class="row" style="border:1px solid black; margin:20px; background-color:#fff;">
-    <div class="col-lg-6 col-lg-offset-2">
-      ${printStatus(obj[i].status)}
-      <img src="profile.png" class="rounded-circle" alt="" height="84px" width="80px"
-        style="margin-top:5px; float:left">
-      <div class="mentee" style="float:left; padding-left: 30px; line-height:1.5rem;padding-top:25px;">
-        <p >Name:<span>${obj[i].name}<span></p>
-        <p>Feedback date:<span>${obj[i].feedbackDate}</span></p>
-      </div>
-    </div>
-    <div class="col-lg-6 col-lg-offset-2">
-      <img src="profile.png" class="rounded-circle" alt="" height="84px" width="80px"
-        style="margin-top: 5px; float:left;">
-      <div class="mentee" style="float:left; padding-left: 30px; line-height:1.5rem;padding-top:25px;">
-        <p>Mentor</p>
-        <span>${obj[i].mentorName}</span>
-      </div>
-    </div>
-    <div class="col-lg-12" style="margin-top:20px;">
-      <div class="paragraph">
-        <h5>Level of comfort</h5>
-        <p>Level of effort by mentee<span style="margin-left:3px;">${printRating(obj[i].feedback.effort[0])}</span></p>
-        <p>Level of effort by mentor<span style="margin-left:3px;">${printRating(obj[i].feedback.effort[1])}</span></p>
-      </div>
-    </div>
-    <br />
-    <br />
-
-    <div id="foo" style="display:none;">
-
-      <div class="col-lg-12">
-        <div class="paragraph">
-          <h5>Contribution to learning</h5>
-          <p>Are you satisfied with our services<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[0])}</span></p>
-          <p>Level of maths assignment/notes<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[1])}</span></p>
-          <p>Level of physics assignment/notes<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[2])}</span></p>
-          <p>Level of chemistry assignment/notes<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[3])}</span></p>
-          <p>Are you doing the assigned work on time<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[4])}</span></p>
-        </div>
-      </div>
-      <div class="col-lg-12">
-        <div class="paragraph">
-          <h5>How much do you agree with these points?</h5>
-          <p>Your mentor is supportive<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[0])}</span></p>
-          <p>Your mentor is able to solve the queries<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[1])}</span></p>
-          <p>Your mentor is helping you in chosing the right material<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[2])}</span></p>
-          <p>Your mentor is able to motivate you to work hard<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[3])}</span></p>
-        </div>
-      </div>
-      <div class="col-lg-12">
-        <div class="paragraph">
-          <h5>Rate mentor abilities</h5>
-          <p>Mentor talks to me regularly<span style="margin-left:3px;">${printRating(obj[i].feedback.resp[0])}</span></p>
-          <p>Mentor makes me feel relaxed and helps me to focus on studies<span style="margin-left:3px;">${printRating(obj[i].feedback.resp[1])}</span></p>
-          <p>Rate your mentor capabilities of handling difficult situations and giving you a feasible solution<span style="margin-left:3px;">${printRating(obj[i].feedback.resp[2])}</span></p>
-        </div>
-      </div>
-      <div class="col-lg-12">
-        <div class="paragraph">
-          <h5>How well is carnot able to make your preparation journey smooth and easy? </h5>
-          <span><span style="margin-left:3px;">${printRating(obj[i].feedback.carnot)}</span></span>
+          <div class="row" id="content${obj[i].feedbackId}" style="border:1px solid black; margin:20px; background-color:#fff;">
+          <div class="col-lg-6 col-lg-offset-2">
+          ${printStatus(obj[i].status)}
+          <img src="profile.png" class="rounded-circle" alt="" height="84px" width="80px"
+          style="margin-top:5px; float:left">
+          <div class="mentee" style="float:left; padding-left: 30px; line-height:1.5rem;padding-top:25px;">
+          <p >Name:<span>${obj[i].name}<span></p>
+          <p>Feedback date:<span>${obj[i].feedbackDate}</span></p>
           </div>
-      </div>
-      <div class="col-lg-12">
-        <div class="paragraph comment">
-          <h5 >Comment</h5>
-          <p>${obj[i].feedback.comment}
-          </p>
+          </div>
+          <div class="col-lg-6 col-lg-offset-2">
+          <img src="profile.png" class="rounded-circle" alt="" height="84px" width="80px"
+          style="margin-top: 5px; float:left;">
+          <div class="mentee" style="float:left; padding-left: 30px; line-height:1.5rem;padding-top:25px;">
+          <p>Mentor</p>
+          <span>${obj[i].mentorName}</span>
+          </div>
+          </div>
+          <div class="col-lg-12" style="margin-top:20px;">
+          <div class="paragraph">
+          <h5>Level of comfort</h5>
+          <p>Level of effort by mentee<span style="margin-left:3px;">${printRating(obj[i].feedback.effort[0])}</span></p>
+          <p>Level of effort by mentor<span style="margin-left:3px;">${printRating(obj[i].feedback.effort[1])}</span></p>
+          </div>
+          </div>
+          <br />
+          <br />
 
-        </div>
-      </div>
+          <div id="foo" style="display:none;">
 
-      <div class="col-lg-12">
-        <div class="paragraph">
-          <h5>Would you recommend carnot to your friends?</h5>
-          <span>${obj[i].feedback.recom}</span>
-        </div>
-      </div>
-      <div class="shift" style="position:relative; left:76%;">
-        <button type="button" class="btn btn-danger btn-sm position-sticky">Critical</button>
-        <button type="button" class="btn btn-secondary btn-sm position-sticky">Resolved</button>
-      </div>
-      <br />
-    </div>
-    <span style="size:4em;margin:0px 0px 10px 10px; top:-5%;"><button onclick="toggle_visibility(this);"
-        type="button" class="btn btn-secondary pull-right" id="see${i}"+>Full Feedback</button></span>
-    </div>`;
-        x = x + j;
-    }
-    document.getElementById("demo").innerHTML = x;
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>Contribution to learning</h5>
+            <p>Are you satisfied with our services<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[0])}</span></p>
+            <p>Level of maths assignment/notes<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[1])}</span></p>
+            <p>Level of physics assignment/notes<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[2])}</span></p>
+            <p>Level of chemistry assignment/notes<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[3])}</span></p>
+            <p>Are you doing the assigned work on time<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[4])}</span></p>
+          </div>
+          </div>
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>How much do you agree with these points?</h5>
+            <p>Your mentor is supportive<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[0])}</span></p>
+            <p>Your mentor is able to solve the queries<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[1])}</span></p>
+            <p>Your mentor is helping you in chosing the right material<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[2])}</span></p>
+            <p>Your mentor is able to motivate you to work hard<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[3])}</span></p>
+          </div>
+          </div>
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>Rate mentor abilities</h5>
+            <p>Mentor talks to me regularly<span style="margin-left:3px;">${printRating(obj[i].feedback.resp[0])}</span></p>
+            <p>Mentor makes me feel relaxed and helps me to focus on studies<span style="margin-left:3px;">${printRating(obj[i].feedback.resp[1])}</span></p>
+            <p>Rate your mentor capabilities of handling difficult situations and giving you a feasible solution<span style="margin-left:3px;">${printRating(obj[i].feedback.resp[2])}</span></p>
+          </div>
+          </div>
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>How well is carnot able to make your preparation journey smooth and easy? </h5>
+            <span><span style="margin-left:3px;">${printRating(obj[i].feedback.carnot)}</span></span>
+            </div>
+          </div>
+          <div class="col-lg-12">
+          <div class="paragraph comment">
+            <h5 >Comment</h5>
+            <p>${obj[i].feedback.comment}
+            </p>
+
+          </div>
+          </div>
+
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>Would you recommend carnot to your friends?</h5>
+            <span>${obj[i].feedback.recom}</span>
+          </div>
+          </div>
+          <div class="shift" style="position:relative; left:76%;">
+          <button type="button" class="btn btn-danger btn-sm position-sticky">Critical</button>
+          <button type="button" class="removebtn btn btn-secondary btn-sm position-sticky" onclick="loadDoc()">Resolved</button>
+          </div>
+          <br />
+          </div>
+          <span style="size:4em;margin:0px 0px 10px 10px; top:-5%;"><button onclick="toggle_visibility(this);"
+          type="button" class="btn btn-secondary pull-right" id="see${i}"+>Full Feedback</button></span>
+          </div>`;
+
+
+          var newDiv= document.createElement("div");
+
+          newDiv.innerHTML=j;
+
+          document.getElementById("demo").append(newDiv);
+
+      }
+
 
     </script>
 
