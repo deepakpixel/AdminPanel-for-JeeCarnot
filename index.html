@@ -247,8 +247,8 @@ let j = '';
           </div>
           </div>
           <div class="shift" style="position:relative; left:76%;">
-          <button type="button" class="btn btn-danger btn-sm position-sticky">Critical</button>
-          <button type="button" class="removebtn btn btn-secondary btn-sm position-sticky" onclick="loadDoc()">Resolved</button>
+          <button type="button" class="btn btn-danger btn-sm position-sticky" onclick="deleteText(${obj[i].feedbackId})">Critical</button>
+          <button type="button" id="removebtn" class="btn btn-secondary btn-sm position-sticky" onclick="deleteText(${obj[i].feedbackId})">Resolved</button>
           </div>
           <br />
           </div>
@@ -264,6 +264,31 @@ let j = '';
           document.getElementById("demo").append(newDiv);
 
       }
+
+
+
+      function deleteText(x){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'sample.txt', true);
+
+
+
+        xhr.onload=function(){
+          if(this.status== 200){
+            var el=document.getElementById("content"+x);
+            el.remove();
+          }
+        }
+
+
+        xhr.onerror=function(){
+          console.log("Error...");
+        }
+
+        xhr.send();
+
+      }
+
 
 
     </script>
