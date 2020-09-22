@@ -118,7 +118,11 @@
           <p>
              Please send your message below. We will get back to you at the earliest!
           </p>
+<<<<<<< HEAD
           <form role="form" method="post" id="myform" enctype="multipart/form-data">
+=======
+          <form role="form" method="post" id="reused_form" enctype="multipart/form-data">
+>>>>>>> 4c5f0b10551e0499c4fa0eb47e2aa223e08fedf6
 
               <div class="row">
                   <div class="col-sm-12 form-group">
@@ -156,20 +160,32 @@
                 <div class="custom-file-container" data-upload-id="myupload">
                   <label >Upload Files <a href="javascript:void(0)" class="custom-file-container__image-clear">&times;</a> </label>
 
+<<<<<<< HEAD
                   <label class="custom-file-container__custom-file" for="inpFile">
+=======
+                  <label class="custom-file-container__custom-file" >
+>>>>>>> 4c5f0b10551e0499c4fa0eb47e2aa223e08fedf6
                     <input type="file" id="inpFile" class="custom-file-container__custom-file" accept="*" multiple aria-label="Multiple Select Files">
                     <input type="hidden" name="MAX_FILE_SIZE" value="10485760">
                     <span class="custom-file-container__custom-file__custom-file-control"></span>
                   </label>
 
+<<<<<<< HEAD
                   <div class="custom-file-container__image-preview" style="overflow:hidden ; display:inline;">
+=======
+                  <div class="custom-file-container__image-preview" style="overflow:hidden">
+>>>>>>> 4c5f0b10551e0499c4fa0eb47e2aa223e08fedf6
                   </div>
                 </div>
               </div>
 
               <div class="row">
                   <div class="col-sm-12 form-group">
+<<<<<<< HEAD
                       <button type="submit" class="btn btn-lg btn-secondary btn-default pull-right" id="btnUpload" >Send </button>
+=======
+                      <button type="submit" class="btn btn-lg btn-secondary btn-default pull-right" id="btnUpload" onclick="successSubmit(this)">Send </button>
+>>>>>>> 4c5f0b10551e0499c4fa0eb47e2aa223e08fedf6
                   </div>
               </div>
 
@@ -194,6 +210,7 @@
 <script>
   var upload = new FileUploadWithPreview('myupload')
 </script>
+<<<<<<< HEAD
 <!-- <script>
 
 
@@ -206,13 +223,36 @@
     for(const file of inpFile.files){
       formData.append("myFiles[]", file);
 
+=======
+<script>
+
+
+
+
+const form={
+  to:document.getElementById('to-email'),
+  from:document.getElementById('from-email'),
+  subject:document.getElementById('subject'),
+  message:document.getElementById('message'),
+}
+
+
+  function successSubmit(x) {
+    const inpFile=document.getElementById('inpFile');
+    const formData=new FormData();
+>>>>>>> 4c5f0b10551e0499c4fa0eb47e2aa223e08fedf6
     const xhr= new XMLHttpRequest();
 
     xhr.open("post","sample.txt", true);
 
     xhr.onload=function(){
       if(this.status== 200){
+<<<<<<< HEAD
 
+=======
+        for(const file of inpFile.files){
+          formData.append("myFiles[]", file);
+>>>>>>> 4c5f0b10551e0499c4fa0eb47e2aa223e08fedf6
         }
       }
     }
@@ -222,6 +262,7 @@
     }
     xhr.send(formData);
   }
+<<<<<<< HEAD
 </script> -->
 <script>
 window.addEventListener( 'load', function () {
@@ -350,6 +391,9 @@ window.addEventListener( 'load', function () {
 
 </script>
 
+=======
+</script>
+>>>>>>> 4c5f0b10551e0499c4fa0eb47e2aa223e08fedf6
     </body>
 
     </html>
